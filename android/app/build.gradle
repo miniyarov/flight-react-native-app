@@ -138,6 +138,18 @@ android {
 
 dependencies {
     compile project(':react-native-navigation')
+    compile project(':appcenter-crashes')
+    compile project(':appcenter-analytics')
+    compile project(':appcenter')
+    compile project(':appcenter-crashes')
+    compile project(':react-native-navigation')
+    compile project(':appcenter-analytics')
+    compile project(':appcenter')
+    compile project(':react-native-navigation')
+    compile project(':appcenter-crashes')
+    compile project(':appcenter-analytics')
+    compile project(':appcenter')
+    compile project(':react-native-navigation')
     compile project(':appcenter-analytics')
     compile project(':appcenter')
     compile fileTree(dir: "libs", include: ["*.jar"])

@@ -60,6 +60,7 @@ class SearchScreen extends Component {
     onCalendarList(type) {
         this.props.navigator.showModal({
             screen: CALENDAR_SCREEN,
+            title: type === ACTION_UPDATE_DEPARTURE_DATE ? 'Gidiş tarihi' : 'Dönüş tarihi',
             passProps: {
                 type
             }
@@ -183,7 +184,7 @@ class SearchScreen extends Component {
                             flex: 0.43,
                             alignItems: 'center'
                         } }>
-                        <Text>{ !returnDate && '>' } Tek Yon</Text>
+                        <Text>{ !returnDate && '>' } Tek Yön</Text>
                     </TouchableHighlight>
                     <TouchableHighlight
                         onPress={ () => this.onToggleRoundtrip(1) }
@@ -197,7 +198,7 @@ class SearchScreen extends Component {
                             flex: 0.43,
                             alignItems: 'center'
                         } }>
-                        <Text>{ returnDate && '>' } Gidis - Donus</Text>
+                        <Text>{ returnDate && '>' } Gidiş - Dönüş</Text>
                     </TouchableHighlight>
                 </View>
                 <View style={ {
@@ -216,7 +217,7 @@ class SearchScreen extends Component {
                             onPress={ () => this.onCalendarList(ACTION_UPDATE_DEPARTURE_DATE) }
                             underlayColor={ 'transparent' }>
                             <View style={ { justifyContent: 'center', alignItems: 'center' } }>
-                                <Text>Gidis Tarihi</Text>
+                                <Text>Gidiş Tarihi</Text>
                                 <Text style={ { fontSize: 25, fontWeight: '800' } }>{ departureMoment.date() }</Text>
                                 <Text>{ departureMoment.format('MMMM') }, { departureMoment.format('dddd') }</Text>
                             </View>
