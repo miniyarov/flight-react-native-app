@@ -1,0 +1,4 @@
+<resources>
+    <string moduleConfig="true" name="appcenterAnalytics_whenToEnableAnalytics">ALWAYS_SEND</string>
+    <string name="app_name">FlightReactNative</string>
+</resources>
