@@ -722,10 +722,11 @@
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = ***REMOVED***;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = ***REMOVED***;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -1236,7 +1237,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ***REMOVED***;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1273,7 +1274,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Manual;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = ***REMOVED***;
 				HEADER_SEARCH_PATHS = (
@@ -1329,8 +1331,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.enuygun.app;
 				PRODUCT_NAME = FlightReactNative;
-				PROVISIONING_PROFILE = "f4390c39-7f04-4ea2-ae88-2b9e704bc939";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development com.enuygun.app";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1360,8 +1362,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.enuygun.app;
 				PRODUCT_NAME = FlightReactNative;
-				PROVISIONING_PROFILE = "f4390c39-7f04-4ea2-ae88-2b9e704bc939";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development com.enuygun.app";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
