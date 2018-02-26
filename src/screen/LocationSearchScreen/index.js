@@ -62,7 +62,7 @@ class LocationSearchScreen extends Component {
         let list = result.length > 0 ? result : defaults
 
         return (
-            <KeyboardAvoidingView style={ { flex: 1, marginBottom: 10 } }>
+            <KeyboardAvoidingView style={ { flex: 1, marginBottom: 10, backgroundColor: 'white' } }>
                 <View style={ { padding: 5, backgroundColor: 'rgba(0,0,0,0.02)' } }>
                     <TextInput
                         style={ { padding: 5, borderWidth: 1, borderColor: 'rgba(0,0,0,0.1)', borderRadius: 5 } }
