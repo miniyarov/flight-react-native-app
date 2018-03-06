@@ -23,7 +23,7 @@ export default class FlightRow extends Component {
         const { flight, airlines, airports, onSelect } = this.props
 
         return [
-            <View style={ { flexDirection: 'row', alignItems: 'center', padding: 5 } }>
+            <View key={ 0 } style={ { flexDirection: 'row', alignItems: 'center', padding: 5 } }>
                 <Image style={ { marginRight: 5, width: 25, height: 25 } }
                        source={ { uri: airlines[flight.segments[0].marketing_airline].image } }/>
                 <Text style={ {
@@ -31,7 +31,7 @@ export default class FlightRow extends Component {
                     fontWeight: 'bold'
                 } }>{ airlines[flight.segments[0].marketing_airline].name }</Text>
             </View>,
-            <View style={ {
+            <View key={ 1 } style={ {
                 flexDirection: 'row',
                 justifyContent: 'space-between',
                 padding: 5,
@@ -71,11 +71,16 @@ export default class FlightRow extends Component {
                         { flight.detail_price } { flight.price_currency }
                     </Text>
                     <TouchableHighlight
+                        style={ {
+                            padding: 5,
+                            alignItems: 'center',
+                            borderWidth: 1,
+                            borderColor: 'rgba(0,0,0,0.5)',
+                            borderRadius: 5
+                        } }
                         onPress={ () => onSelect(flight) }
                         underlayColor={ 'transparent' }>
-                        <View style={ { padding: 2, borderWidth: 1, borderColor: 'rgba(0,0,0,0.5)', borderRadius: 5 } }>
-                            <Text>Select</Text>
-                        </View>
+                        <Text>Select</Text>
                     </TouchableHighlight>
                 </View>
             </View>

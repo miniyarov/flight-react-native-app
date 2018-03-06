@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import {
+    ScrollView,
     View,
     Text,
     Switch,
-    TouchableHighlight
+    TouchableHighlight,
+    Alert
 } from 'react-native'
 import moment from 'moment'
 import { connect } from 'react-redux'
@@ -31,20 +33,24 @@ class SearchScreen extends Component {
         const { navigator, origin, destination, departureDate, passengers, cabinClass } = this.props
         const { returnDate, nonStop } = this.state
 
-        navigator.push({
-            screen: RESULT_SCREEN,
-            title: 'Gidiş Uçuşunu Seçin',
-            backButtonTitle: '',
-            passProps: {
-                origin,
-                destination,
-                departureDate,
-                returnDate,
-                passengers,
-                cabinClass,
-                nonStop
-            }
-        })
+        if (origin.id.length > 4 || destination.id.length > 4) {
+            Alert.alert('Oops!', 'Please select destinations')
+        } else {
+            navigator.push({
+                screen: RESULT_SCREEN,
+                title: 'Gidiş Uçuşunu Seçin',
+                backButtonTitle: '',
+                passProps: {
+                    origin,
+                    destination,
+                    departureDate,
+                    returnDate,
+                    passengers,
+                    cabinClass,
+                    nonStop
+                }
+            })
+        }
     }
 
     onLocationSearch(type) {
@@ -88,7 +94,7 @@ class SearchScreen extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        // returnDte changes through redux
+        // returnDate changes through redux
         if (nextProps.returnDate !== this.state.returnDate) {
             this.setState({
                 returnDate: nextProps.returnDate
@@ -129,7 +135,7 @@ class SearchScreen extends Component {
         }
 
         return (
-            <View style={ { flex: 1, backgroundColor: 'rgba(0,0,0,0.1)' } }>
+            <ScrollView style={ { flex: 1, backgroundColor: 'rgba(0,0,0,0.1)' } }>
                 <Text style={ {
                     margin: 10,
                     fontSize: 20,
@@ -278,7 +284,7 @@ class SearchScreen extends Component {
                         <Text style={ { margin: 10, padding: 10, textAlign: 'center', borderWidth: 1 } }>Search</Text>
                     </TouchableHighlight>
                 </View>
-            </View>
+            </ScrollView>
         )
     }
 }

@@ -24,7 +24,9 @@
     "babel-jest": "22.2.2",
     "babel-preset-react-native": "4.0.0",
     "jest": "22.3.0",
-    "react-test-renderer": "16.2.0"
+    "react-test-renderer": "16.2.0",
+    "reactotron-react-native": "^1.14.0",
+    "socket.io-client": "^2.0.4"
   },
   "jest": {
     "preset": "react-native"

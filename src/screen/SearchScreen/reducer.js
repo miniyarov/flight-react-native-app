@@ -10,7 +10,7 @@ export const ACTION_UPDATE_CABIN_CLASS = 'ACTION_UPDATE_CABIN_CLASS'
 export const origin = (state = initialState.origin, action) => {
     switch (action.type) {
         case ACTION_UPDATE_ORIGIN:
-            return action.payload
+            return { ...action.payload }
         default:
             return state
     }
@@ -19,7 +19,7 @@ export const origin = (state = initialState.origin, action) => {
 export const destination = (state = initialState.destination, action) => {
     switch (action.type) {
         case ACTION_UPDATE_DESTINATION:
-            return action.payload
+            return { ...action.payload }
         default:
             return state
     }
@@ -46,7 +46,7 @@ export const returnDate = (state = null, action) => {
 export const passengers = (state = initialState.passengers, action) => {
     switch (action.type) {
         case ACTION_UPDATE_PASSENGERS:
-            return action.payload
+            return { ...action.payload }
         default:
             return state
     }
